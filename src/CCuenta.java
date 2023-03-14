@@ -10,7 +10,13 @@ public class CCuenta {
     public CCuenta()
     {
     }
-
+    /**
+     * Constructor de la clase Cuenta
+     * @param nom nombre del propietario de la cuenta
+     * @param cue número de cuenta
+     * @param sal saldo
+     * @param tipo tipo de cuenta
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         setNombre(nom);
@@ -22,14 +28,22 @@ public class CCuenta {
     {
         return getSaldo();
     }
-
+    /**
+     * Ingresa la cantidad indicada en la cuenta
+     * @param cantidad La cantidad a ingresar no puede ser menor que 0
+     * @throws Exception Lanza esta excepción cuando la cantidad ingresada es menor que 0
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+    /**
+     * La cantidad a retirar no puede ser menor que 0
+     * @param cantidad
+     * @throws Exception
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
